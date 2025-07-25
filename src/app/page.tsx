@@ -2,9 +2,18 @@
 
 import { useState } from "react";
 
+type Todo = {
+  task: string;
+};
+
 export default function Home() {
   const [task, setTask] = useState<string>("");
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState<Todo[]>([]);
+
+  const addTodo = () => {
+    setTodos((prevTodo) => [...prevTodo, { task }]);
+    setTask("");
+  };
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,10 +25,14 @@ export default function Home() {
         className="border"
         type="text"
       />
-      <button onClick={() => console.log(task)} className="border">
+      <button onClick={addTodo} className="border">
         追加
       </button>
-      <ul></ul>
+      <ul>
+        {todos.map((todo, index) => (
+          <li key={index}>{todo.task}</li>
+        ))}
+      </ul>
     </div>
   );
 }
