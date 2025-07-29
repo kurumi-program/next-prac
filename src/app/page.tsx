@@ -29,7 +29,7 @@ export default function Home() {
       <Button onClick={addTodo} className="border">
         追加
       </Button>
-      <button>普通のボタン</button>
+      <button>普通のボタンaaa</button>
       <ul>
         {todos.map((todo, index) => (
           <li key={index}>{todo.task}</li>

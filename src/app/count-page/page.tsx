@@ -8,10 +8,7 @@ export default function Count() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h1 className="font-bold mt-3">カウントボタン</h1>
       <h2>{count}</h2>
-      <button
-        onClick={() => setCount(count + 1)}
-        className="border w-[100px] mt-3"
-      >
+      <button onClick={() => setCount(count + 1)} className="border w-[100px] mt-3">
         ➕
       </button>
     </div>
